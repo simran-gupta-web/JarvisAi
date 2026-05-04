@@ -62,3 +62,17 @@ cursor = con.cursor()
 # Add Column in contacts table
 # cursor.execute("ALTER TABLE contacts ADD COLUMN address VARCHAR(255)")
 
+# adding api key in config table from srach by creating table 
+# query = "CREATE TABLE IF NOT EXISTS config(api_key VARCHAR(500))"
+# cursor.execute(query)
+# con.commit()
+
+
+# select_query = "SELECT * FROM config"
+# cursor.execute(select_query)
+# print(cursor.fetchall())
+
+# query = "INSERT INTO config VALUES ('wewee')"
+# cursor.execute(query)
+# con.commit()
+# con.close()

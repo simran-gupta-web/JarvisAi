@@ -19,8 +19,8 @@ import pvporcupine
 
 from engine.helper import extract_yt_term, markdown_to_text, remove_words
 from hugchat import hugchat
-
-con = sqlite3.connect("jarvis.db")
+con = sqlite3.connect(get_db_path())
+# con = sqlite3.connect("jarvis.db")
 cursor = con.cursor()
 
 @eel.expose
