@@ -31,7 +31,7 @@ cursor = con.cursor()
 
 # Specify the column indices you want to import (0-based index)
 # Example: Importing the 1st and 3rd columns
-# desired_columns_indices = [0, 30]
+# desired_columns_indices = [0, 18]
 
 # # Read data from CSV and insert into SQLite table for the desired columns
 # with open('contacts.csv', 'r', encoding='utf-8') as csvfile:
@@ -44,11 +44,11 @@ cursor = con.cursor()
 # con.commit()
 # con.close()
 
-# query = "INSERT INTO contacts VALUES (null,'pawan', '1234567890', 'null')"
+# query = "INSERT INTO contacts VALUES ('null','pawan', '1234567890', 'null','bhopal')"
 # cursor.execute(query)
 # con.commit()
 
-# query = 'kunal'
+# query = 'papa'
 # query = query.strip().lower()
 
 # cursor.execute("SELECT mobile_no FROM contacts WHERE LOWER(name) LIKE ? OR LOWER(name) LIKE ?", ('%' + query + '%', query + '%'))

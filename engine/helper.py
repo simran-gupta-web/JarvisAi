@@ -26,7 +26,6 @@ def remove_words(input_string, words_to_remove):
     return result_string
 
 
-
 # key events like receive call, stop call, go back
 def keyEvent(key_code):
     command =  f'adb shell input keyevent {key_code}'
