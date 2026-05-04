@@ -350,3 +350,37 @@ def InsertContacts(Name, MobileNo, Email, City):
     cursor.execute(
         '''INSERT INTO contacts VALUES (?, ?, ?, ?, ?)''', (None,Name, MobileNo, Email, City))
     con.commit()
+
+@eel.expose
+def updateAPIKey(api_key):
+    cursor.execute("SELECT COUNT(*) FROM config")
+    count = cursor.fetchone()[0]
+    if count > 0:
+        # Update existing record
+        cursor.execute(
+            '''UPDATE config 
+               SET api_key=?''',
+            (api_key,)
+        )
+    else:
+        # Insert new record if no data exists
+        cursor.execute(
+            '''INSERT INTO config (api_key) 
+               VALUES (?)''',
+            (api_key,)
+        )
+
+    con.commit()
+    return 1
+
+@eel.expose
+def getAPIKey():
+    try:
+        cursor.execute("SELECT api_key FROM config")
+        results = cursor.fetchall()
+        api_key = results[0][0]
+        eel.loadAPIKey(api_key)
+        return api_key  
+    except:
+        print("no data")
+        return ""
