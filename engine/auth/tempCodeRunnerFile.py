@@ -1,3 +1,1 @@
- # if flag == 1:
-        #     break
-            
+        for(x, y, w, h) in faces:
